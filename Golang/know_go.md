@@ -32,6 +32,19 @@ ee = append(ee, bb)
 
 Переменная с заглавной буквы станет публичной и будет видна другим пакетам
 
+## повторная декларация и переназначение - err:=дважды можно
+```go
+f, err := os.Open(name)
+if err != nil {
+    return err
+}
+d, err := f.Stat()
+if err != nil {
+    f.Close()
+    return err
+}
+```
+
 ## iota - is enum
 	каждый const обнуляет
 
